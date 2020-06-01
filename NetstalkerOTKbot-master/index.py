@@ -67,9 +67,9 @@ def start(message):
 def choose_language_ru(message):
     if "🇷🇺" in message.text:
         language = "ru"
-    elif:
+    if "🇺🇸" in message.text:
         language = "en"
-    elif
+    else
         language = "ua"
 
     user = UserManager.searchUser(message.chat.id)

@@ -67,7 +67,7 @@ def start(message):
 def choose_language_ru(message):
     if "🇷🇺" in message.text:
         language = "ru"
-    if "🇺🇸" in message.text:
+    elif "🇺🇸" in message.text:
         language = "en"
     else
         language = "ua"

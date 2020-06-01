@@ -59,12 +59,12 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True, one_time_keyboard=True)
     markup.row('🇷🇺 Русский')
     markup.add('🇺🇸 English')
-    markup.add('🇺a Украинский')
+    markup.add('🇺🇦 Украинский')
     bot.send_message(message.chat.id, 'Choose your language', reply_markup=markup)
 
 @bot.message_handler(regexp='🇷🇺.*')
 @bot.message_handler(regexp='🇺🇸.*')
-@bot.message_handler(regexp='ua.*')
+@bot.message_handler(regexp='🇺🇦.*')
 def choose_language_ru(message):
     if "🇷🇺" in message.text:
         language = "ru"

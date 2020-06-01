@@ -6,7 +6,7 @@ import codecs
 
 bot = telebot.TeleBot('1289437496:AAGKvUDEGudYBRSh1WfjGwuNn0F3GmMdfkM')
 
-_languages_to_load = ["ru", "en"]
+_languages_to_load = ["ru", "en", "ua"]
 
 languages = {}
 for lang in _languages_to_load:
@@ -59,6 +59,7 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True, one_time_keyboard=True)
     markup.row('🇷🇺 Русский')
     markup.add('🇺🇸 English')
+    markup.add('🇺a Украинский')
     bot.send_message(message.chat.id, 'Choose your language', reply_markup=markup)
 
 @bot.message_handler(regexp='🇷🇺.*')
@@ -68,6 +69,8 @@ def choose_language_ru(message):
         language = "ru"
     else:
         language = "en"
+    else
+        language = "ua"
 
     user = UserManager.searchUser(message.chat.id)
     if user == False:

@@ -64,6 +64,7 @@ def start(message):
 
 @bot.message_handler(regexp='🇷🇺.*')
 @bot.message_handler(regexp='🇺🇸.*')
+@bot.message_handler(regexp='ua.*')
 def choose_language_ru(message):
     if "🇷🇺" in message.text:
         language = "ru"
